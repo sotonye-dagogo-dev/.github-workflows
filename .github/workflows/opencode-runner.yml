@@ -71,6 +71,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           model: ${{ steps.model-selector.outputs.chosen_model }}
+          use_github_token: true
 
       # SAFETY NET: force-correct the PR's base branch regardless of what
       # the action actually did with the inputs above. Verify against
