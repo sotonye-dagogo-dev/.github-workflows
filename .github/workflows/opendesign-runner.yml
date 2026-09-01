@@ -48,33 +48,36 @@ jobs:
         run: |
           set -euo pipefail
 
+          # Default fallback model if no alias is found
           SELECTED_MODEL="opencode/muse-spark-1.2-contributor-free"
 
           # Match aliases safely from env var (multiline-safe)
           if [[ "$COMMENT_BODY" == *"@nemo"* ]]; then
-            SELECTED_MODEL="opencode/nemotron-3-ultra-free"
+            SELECTED_MODEL="opencode/nemotron-3-ultra-free" # 1,000,000	128,000
           elif [[ "$COMMENT_BODY" == *"@mimo"* ]]; then
-            SELECTED_MODEL="oppencode/mimo-v2-5:free"
+            SELECTED_MODEL="mimo-v2-5:free" # 1,048,576	131,072
           elif [[ "$COMMENT_BODY" == *"@ling"* ]]; then
-            SELECTED_MODEL="opencode/ling-3.0-flash-fin-free"
+            SELECTED_MODEL="opencode/ling-3.0-flash-fin-free" # 262,144	32,768
           elif [[ "$COMMENT_BODY" == *"@gpt"* ]]; then
-            SELECTED_MODEL="opencode/gpt-5.5:free"
+            SELECTED_MODEL="gpt-5.5:free" # 1,050,000	128,000
           elif [[ "$COMMENT_BODY" == *"@pickle"* ]]; then
-            SELECTED_MODEL="opencode/big-pickle"
+            SELECTED_MODEL="opencode/big-pickle" # 200,000	32,000
           elif [[ "$COMMENT_BODY" == *"@mimopro"* ]]; then
-            SELECTED_MODEL="opencode/mimo-v2-pro-free"
+            SELECTED_MODEL="xiaomi-mimo-v2.5-pro-free" # 1,048,576	131,072
           elif [[ "$COMMENT_BODY" == *"@muse"* ]]; then
-            SELECTED_MODEL="opencode/muse-spark-1.2-contributor-free"
+            SELECTED_MODEL="opencode/muse-spark-1.2-contributor-free" # 1,048,576	131,072
           elif [[ "$COMMENT_BODY" == *"@k3"* ]]; then
-            SELECTED_MODEL="opencode/k3"
+            SELECTED_MODEL="k3" # 1,048,576	131,072
+          elif [[ "$COMMENT_BODY" == *"@qwen"* ]]; then
+            SELECTED_MODEL="qwen3.7-max" # 1,000,000	131,072
+          elif [[ "$COMMENT_BODY" == *"@xpre"* ]]; then
+            SELECTED_MODEL="opencode/x-preview-f-free" # 1,000,000	131,072
           elif [[ "$COMMENT_BODY" == *"@gemini"* ]]; then
-            SELECTED_MODEL="google/gemini-3.1-pro-preview"
+            SELECTED_MODEL="google/gemini-3.1-pro-preview" # 1,048,576	65,536
           elif [[ "$COMMENT_BODY" == *"@flash"* ]]; then
-            SELECTED_MODEL="google/gemini-3.5-flash-lite"
+            SELECTED_MODEL="google/gemini-3.5-flash-lite" # 1,048,576	65,536
           elif [[ "$COMMENT_BODY" == *"@poolside"* ]]; then
-            SELECTED_MODEL="openrouter/poolside/laguna-s-2.1:free"
-          elif [[ "$COMMENT_BODY" == *"@coder"* ]]; then
-            SELECTED_MODEL="openrouter/qwen/qwen-2.5-coder-32b"
+            SELECTED_MODEL="openrouter/poolside/laguna-s-2.1:free" # 256,000	32,768
           fi
 
           echo "chosen_model=$SELECTED_MODEL" >> "$GITHUB_OUTPUT"
