@@ -48,14 +48,31 @@ jobs:
         run: |
           set -euo pipefail
 
-          SELECTED_MODEL="opencode/deepseek-v4-flash-free"
+          SELECTED_MODEL="opencode/muse-spark-1.2-contributor-free"
 
-          if [[ "$COMMENT_BODY" == *"@gemini"* ]]; then
-            SELECTED_MODEL="google/gemini-2.5-pro"
+          # Match aliases safely from env var (multiline-safe)
+          if [[ "$COMMENT_BODY" == *"@nemo"* ]]; then
+            SELECTED_MODEL="opencode/nemotron-3-ultra-free"
+          elif [[ "$COMMENT_BODY" == *"@mimo"* ]]; then
+            SELECTED_MODEL="kenari/mimo-v2-5:free"
+          elif [[ "$COMMENT_BODY" == *"@ling"* ]]; then
+            SELECTED_MODEL="opencode/ling-3.0-flash-fin-free"
+          elif [[ "$COMMENT_BODY" == *"@gpt"* ]]; then
+            SELECTED_MODEL="unorouter/gpt-5.5:free"
+          elif [[ "$COMMENT_BODY" == *"@pickle"* ]]; then
+            SELECTED_MODEL="opencode/big-pickle"
+          elif [[ "$COMMENT_BODY" == *"@mimopro"* ]]; then
+            SELECTED_MODEL="opencode/mimo-v2-pro-free"
+          elif [[ "$COMMENT_BODY" == *"@muse"* ]]; then
+            SELECTED_MODEL="opencode/muse-spark-1.2-contributor-free"
+          elif [[ "$COMMENT_BODY" == *"@k3"* ]]; then
+            SELECTED_MODEL="kimi-for-coding/k3"
+          elif [[ "$COMMENT_BODY" == *"@gemini"* ]]; then
+            SELECTED_MODEL="google/gemini-3.1-pro-preview"
           elif [[ "$COMMENT_BODY" == *"@flash"* ]]; then
-            SELECTED_MODEL="google/gemini-2.5-flash"
-          elif [[ "$COMMENT_BODY" == *"@router"* ]]; then
-            SELECTED_MODEL="openrouter/google/gemini-2.5-flash"
+            SELECTED_MODEL="google/gemini-3.5-flash-lite"
+          elif [[ "$COMMENT_BODY" == *"@poolside"* ]]; then
+            SELECTED_MODEL="openrouter/poolside/laguna-s-2.1:free"
           elif [[ "$COMMENT_BODY" == *"@coder"* ]]; then
             SELECTED_MODEL="openrouter/qwen/qwen-2.5-coder-32b"
           fi
