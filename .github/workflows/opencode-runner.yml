@@ -57,11 +57,11 @@ jobs:
           if [[ "$COMMENT_BODY" == *"@nemo"* ]]; then
             SELECTED_MODEL="opencode/nemotron-3-ultra-free"
           elif [[ "$COMMENT_BODY" == *"@mimo"* ]]; then
-            SELECTED_MODEL="kenari/mimo-v2-5:free"
+            SELECTED_MODEL="oppencode/mimo-v2-5:free"
           elif [[ "$COMMENT_BODY" == *"@ling"* ]]; then
             SELECTED_MODEL="opencode/ling-3.0-flash-fin-free"
           elif [[ "$COMMENT_BODY" == *"@gpt"* ]]; then
-            SELECTED_MODEL="unorouter/gpt-5.5:free"
+            SELECTED_MODEL="opencode/gpt-5.5:free"
           elif [[ "$COMMENT_BODY" == *"@pickle"* ]]; then
             SELECTED_MODEL="opencode/big-pickle"
           elif [[ "$COMMENT_BODY" == *"@mimopro"* ]]; then
@@ -69,7 +69,7 @@ jobs:
           elif [[ "$COMMENT_BODY" == *"@muse"* ]]; then
             SELECTED_MODEL="opencode/muse-spark-1.2-contributor-free"
           elif [[ "$COMMENT_BODY" == *"@k3"* ]]; then
-            SELECTED_MODEL="kimi-for-coding/k3"
+            SELECTED_MODEL="opencode/k3"
           elif [[ "$COMMENT_BODY" == *"@gemini"* ]]; then
             SELECTED_MODEL="google/gemini-3.1-pro-preview"
           elif [[ "$COMMENT_BODY" == *"@flash"* ]]; then
