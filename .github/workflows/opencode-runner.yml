@@ -57,29 +57,33 @@ jobs:
           if [[ "$COMMENT_BODY" == *"@nemo"* ]]; then
             SELECTED_MODEL="opencode/nemotron-3-ultra-free" # 1,000,000	128,000
           elif [[ "$COMMENT_BODY" == *"@mimo"* ]]; then
-            SELECTED_MODEL="opencode/mimo-v2-5:free" # 1,048,576	131,072
+            SELECTED_MODEL="kenari/mimo-v2-5:free" # 1,048,576	131,072
+          elif [[ "$COMMENT_BODY" == *"@opus"* ]]; then
+            SELECTED_MODEL="kenari/claude-opus-5" # 1,000,000	128,000
+          elif [[ "$COMMENT_BODY" == *"@fable"* ]]; then
+            SELECTED_MODEL="kenari/claude-fable-5" # 1,000,000	128,000
           elif [[ "$COMMENT_BODY" == *"@ling"* ]]; then
             SELECTED_MODEL="opencode/ling-3.0-flash-fin-free" # 262,144	32,768
           elif [[ "$COMMENT_BODY" == *"@gpt"* ]]; then
-            SELECTED_MODEL="opencode/gpt-5.5:free" # 1,050,000	128,000
+            SELECTED_MODEL="kenari/gpt-5-5" # 1,050,000	128,000 alteratively unorouter/gpt-5.5:free
           elif [[ "$COMMENT_BODY" == *"@pickle"* ]]; then
             SELECTED_MODEL="opencode/big-pickle" # 200,000	32,000
           elif [[ "$COMMENT_BODY" == *"@mimopro"* ]]; then
-            SELECTED_MODEL="opencode/xiaomi-mimo-v2.5-pro-free" # 1,048,576	131,072
+            SELECTED_MODEL="kenari/mimo-v2-5-pro" # 1,048,576	131,072 alternatively aihubmix/xiaomi-mimo-v2.5-pro-free
           elif [[ "$COMMENT_BODY" == *"@muse"* ]]; then
             SELECTED_MODEL="opencode/muse-spark-1.2-contributor-free" # 1,048,576	131,072
-          elif [[ "$COMMENT_BODY" == *"@kimi3"* ]]; then
-            SELECTED_MODEL="opencode/k3" # 1,048,576	131,072
+          elif [[ "$COMMENT_BODY" == *"@kimik3"* ]]; then
+            SELECTED_MODEL="kenari/kimi-k3" # 1,048,576	131,072
           elif [[ "$COMMENT_BODY" == *"@qwen"* ]]; then
-            SELECTED_MODEL="opencode/qwen3.7-max" # 1,000,000	131,072
+            SELECTED_MODEL="alibaba-token-plan/qwen3.8-flash" # 1,000,000	131,072
+          elif [[ "$COMMENT_BODY" == *"@deepseek"* ]]; then
+            SELECTED_MODEL="alibaba-token-plan/deepseek-v4-flash-0731" # 1,000,000	384,000
           elif [[ "$COMMENT_BODY" == *"@xpre"* ]]; then
             SELECTED_MODEL="opencode/x-preview-f-free" # 1,000,000	131,072
           elif [[ "$COMMENT_BODY" == *"@gemini"* ]]; then
-            SELECTED_MODEL="google/gemini-3.1-pro-preview" # 1,048,576	65,536
-          elif [[ "$COMMENT_BODY" == *"@flash"* ]]; then
-            SELECTED_MODEL="google/gemini-3.5-flash-lite" # 1,048,576	65,536
+            SELECTED_MODEL="kenari/gemini-3-1-pro" # 1,048,576	65,536
           elif [[ "$COMMENT_BODY" == *"@poolside"* ]]; then
-            SELECTED_MODEL="openrouter/poolside/laguna-s-2.1:free" # 256,000	32,768
+            SELECTED_MODEL="openrouter/poolside/laguna-s-2.1:free" # 256,000	32,768 alternatively opencode/laguna-s-2.1-free
           fi
 
           echo "chosen_model=$SELECTED_MODEL" >> "$GITHUB_OUTPUT"
