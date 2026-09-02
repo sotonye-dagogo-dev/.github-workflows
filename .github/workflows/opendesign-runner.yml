@@ -58,6 +58,8 @@ jobs:
             SELECTED_MODEL="kenari/mimo-v2-5:free" # 1,048,576	131,072
           elif [[ "$COMMENT_BODY" == *"@opus"* ]]; then
             SELECTED_MODEL="kenari/claude-opus-5" # 1,000,000	128,000
+          elif [[ "$COMMENT_BODY" == *"@sonnet"* ]]; then
+            SELECTED_MODEL="kenari/claude-sonnet-5" # 1,000,000	128,000
           elif [[ "$COMMENT_BODY" == *"@fable"* ]]; then
             SELECTED_MODEL="kenari/claude-fable-5" # 1,000,000	128,000
           elif [[ "$COMMENT_BODY" == *"@ling"* ]]; then
@@ -73,9 +75,9 @@ jobs:
           elif [[ "$COMMENT_BODY" == *"@kimik3"* ]]; then
             SELECTED_MODEL="kenari/kimi-k3" # 1,048,576	131,072
           elif [[ "$COMMENT_BODY" == *"@qwen"* ]]; then
-            SELECTED_MODEL="alibaba-token-plan/qwen3.8-flash" # 1,000,000	131,072
+            SELECTED_MODEL="kenari/qwen3-8-max" # 1,000,000	131,072 alternatively alibaba-token-plan/qwen3.8-flash
           elif [[ "$COMMENT_BODY" == *"@deepseek"* ]]; then
-            SELECTED_MODEL="alibaba-token-plan/deepseek-v4-flash-0731" # 1,000,000	384,000
+            SELECTED_MODEL="kenari/deepseek-v4-flash:free" # 1,000,000	384,000 alternatively alibaba-token-plan/deepseek-v4-flash-0731
           elif [[ "$COMMENT_BODY" == *"@xpre"* ]]; then
             SELECTED_MODEL="opencode/x-preview-f-free" # 1,000,000	131,072
           elif [[ "$COMMENT_BODY" == *"@gemini"* ]]; then
