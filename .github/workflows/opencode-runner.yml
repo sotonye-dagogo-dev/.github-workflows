@@ -51,7 +51,7 @@ jobs:
           set -euo pipefail
 
           # Default fallback model if no alias is found
-          SELECTED_MODEL="opencode/muse-spark-1.2-contributor-free"
+          SELECTED_MODEL="opencode/muse-spark-1.3-contributor-free"
 
           # Match aliases safely from env var (multiline-safe)
           if [[ "$COMMENT_BODY" == *"@nemo"* ]]; then
