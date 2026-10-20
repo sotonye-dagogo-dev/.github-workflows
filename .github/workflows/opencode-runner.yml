@@ -62,9 +62,9 @@ jobs:
             SELECTED_MODEL="opencode/mimo-v2.6-flash-free" # 1,048,576	131,072
           elif [[ "$COMMENT_BODY" == *"@oc-glm-5.3"* ]]; then
             SELECTED_MODEL="opencode/glm-5.3-flash-free" # 1,048,576	131,072
-             elif [[ "$COMMENT_BODY" == *"@oc-mmx-3.1"* ]]; then
+          elif [[ "$COMMENT_BODY" == *"@oc-mmx-3.1"* ]]; then
             SELECTED_MODEL="opencode/minimax-m3.1-flash-free" #  1,000,000	512,000
-             elif [[ "$COMMENT_BODY" == *"@oc-beam"* ]]; then
+          elif [[ "$COMMENT_BODY" == *"@oc-beam"* ]]; then
             SELECTED_MODEL="opencode/beam-free" #  1,000,000	131,000
           elif [[ "$COMMENT_BODY" == *"@opus"* ]]; then
             SELECTED_MODEL="kenari/claude-opus-5" # 1,000,000	128,000
