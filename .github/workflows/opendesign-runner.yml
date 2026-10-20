@@ -49,13 +49,21 @@ jobs:
           set -euo pipefail
 
           # Default fallback model if no alias is found
-          SELECTED_MODEL="opencode/mimo-v2.6-flash-free"
+          SELECTED_MODEL="opencode/deepseek-v4.1-flash-free"
 
           # Match aliases safely from env var (multiline-safe)
-          if [[ "$COMMENT_BODY" == *"@nemo"* ]]; then
+          if [[ "$COMMENT_BODY" == *"@oc-nemo-3"* ]]; then
             SELECTED_MODEL="opencode/nemotron-3-ultra-free" # 1,000,000	128,000
-          elif [[ "$COMMENT_BODY" == *"@mimo"* ]]; then
-            SELECTED_MODEL="kenari/mimo-v2-5:free" # 1,048,576	131,072
+          elif [[ "$COMMENT_BODY" == *"@oc-ds-4.1"* ]]; then
+            SELECTED_MODEL="opencode/deepseek-v4.1-flash-free" # 1,048,576	131,072
+          elif [[ "$COMMENT_BODY" == *"@oc-mimo-2.6"* ]]; then
+            SELECTED_MODEL="opencode/mimo-v2.6-flash-free" # 1,048,576	131,072
+          elif [[ "$COMMENT_BODY" == *"@oc-glm-5.3"* ]]; then
+            SELECTED_MODEL="opencode/glm-5.3-flash-free" # 1,048,576	131,072
+          elif [[ "$COMMENT_BODY" == *"@oc-mmx-3.1"* ]]; then
+            SELECTED_MODEL="opencode/minimax-m3.1-flash-free" #  1,000,000	512,000
+          elif [[ "$COMMENT_BODY" == *"@oc-beam"* ]]; then
+            SELECTED_MODEL="opencode/beam-free" #  1,000,000	131,000
           elif [[ "$COMMENT_BODY" == *"@opus"* ]]; then
             SELECTED_MODEL="kenari/claude-opus-5" # 1,000,000	128,000
           elif [[ "$COMMENT_BODY" == *"@sonnet"* ]]; then
